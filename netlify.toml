@@ -1,0 +1,19 @@
+# Netlify configuration file
+
+[images]
+  remote_images = ["https://source.unsplash.com/.*", "https://images.unsplash.com/.*", "https://ext.same-assets.com/.*", "https://ugc.same-assets.com/.*"]
+
+[build]
+  command = "bun run build"
+  publish = "dist"
+
+# Redirect all URLs to index.html for SPA routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[dev]
+  command = "bun run dev"
+  port = 5173
+  publish = "dist"
